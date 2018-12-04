@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .form-inscription {
+      width: 300px;
+      /* background-color: rgba(200, 200, 200, 0.5); */
+      background-color: #E8E8E8;
+      padding: 5px;
+    }
+
+    .form-inscription label, .form-inscription b, .form-inscription a {
+      display: block;
+    }
+
+    .form-inscription b, .form-inscription a {
+      font-size: 0.8rem;
+    }
+
+    .form-inscription label:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    [class|="width"] {
+      box-sizing: border-box;
+    }
+
+    .width-100 {
+      width: 100%;
+    }
+
+    .width-50 {
+      width: 50%;
+    }
+
+    .width-33 {
+      width: 33.33%;
+    }
+  </style>
+</head>
+
+<body>
+  <form class="form-inscription">
+
+    <label>
+      <b>Nom</b>
+      <input placeholder="Prénom" class="width-50"><input placeholder="Nom" class="width-50">
+    </label>
+
+    <label>
+      <b>Choisir votre nom d'utilisateur</b>
+      <input type="email" placeholder="@gmail.com" class="width-100">
+      <a href="">Je préfère conserver mon adresse e-mail actuelle</a>
+    </label>
+
+    <label>
+      <b>Créer votre mot de passe</b>
+      <input type="password" class="width-100">
+    </label>
+
+    <label>
+      <b>Confirmer votre mot de passe</b>
+      <input type="password" class="width-100">
+    </label>
+
+    <label>
+      <b>Date de naissance</b>
+      <input type="text" placeholder="Jour" class="width-33"><select class="width-33">
+        <option disabled selected>Mois</option>
+        <option value="01">Janvier</option>
+        <option value="02">Février</option>
+      </select><input type="text" placeholder="Année" class="width-33">
+    </label>
+
+    <label>
+      <b>Sexe</b>
+      <select class="width-100">
+        <option disabled selected>Je suis...</option>
+        <option value="h">Homme</option>
+        <option value="f">Femme</option>
+      </select>
+    </label>
+
+  </form>
+</body>
+
+</html>
