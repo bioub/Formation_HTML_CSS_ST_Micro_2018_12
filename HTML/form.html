@@ -10,13 +10,14 @@
   <form action="https://www.google.fr/search" method="GET">
     <!-- Offset <input type="number" name="start"> -->
     <select name="start">
+      <option disabled selected value="0">Choisir une page</option>
       <option value="0">Page 1</option>
       <option value="100">Page 11</option>
       <option value="200">Page 21</option>
     </select>
     <input type="hidden" name="start" value="100">
-    <input type="text" name="q" placeholder="Prénom" required>
-    <input type="email">
+    <input type="text" name="q" placeholder="Recherche..." required>
+    <input type="range">
 
     <label>
       <input type="radio" name="couleur" value="blue">

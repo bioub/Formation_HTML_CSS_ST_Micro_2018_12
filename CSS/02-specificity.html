@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 0 0 0 */
+    * {
+      color: purple;
+    }
+
+    p {
+      /* toutes les propriétés liée au texte sont héritées */
+      /* la balise b est donc en gris également */
+      color: lightgray;
+    }
+
+
+    /* 0 0 2 */
+    p > span {
+      color: red;
+    }
+
+    /* 0 0 1 */
+    span {
+      color: blue;
+    }
+
+
+    /* 0 1 1 */
+    span.one {
+      color: yellow;
+    }
+
+    /* 1 0 0 */
+    #two {
+      color: green !important;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    <span class="one" style="color: orange">Lorem ipsum</span>, dolor sit amet consectetur adipisicing elit. Ratione
+    debitis <span>tempore cum</span> ducimus? <b>Similique</b> debitis explicabo ut, excepturi
+    doloribus <span id="two" style="color: orange">porro quam</span> eligendi alias recusandae? Unde porro est dolor
+    quam sint!
+  </p>
+</body>
+
+</html>
