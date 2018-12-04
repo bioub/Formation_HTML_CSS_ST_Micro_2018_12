@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="https://www.google.fr/search" method="GET">
+    <!-- Offset <input type="number" name="start"> -->
+    <select name="start">
+      <option value="0">Page 1</option>
+      <option value="100">Page 11</option>
+      <option value="200">Page 21</option>
+    </select>
+    <input type="hidden" name="start" value="100">
+    <input type="text" name="q" placeholder="Prénom" required>
+    <input type="email">
+
+    <label>
+      <input type="radio" name="couleur" value="blue">
+      Bleu
+    </label>
+
+    <input type="radio" name="couleur" value="green" id="green">
+    <label for="green">Vert</label>
+    <textarea>
+
+      Bonjour
+
+    </textarea>
+    <button>OK Google</button>
+  </form>
+</body>
+</html>
