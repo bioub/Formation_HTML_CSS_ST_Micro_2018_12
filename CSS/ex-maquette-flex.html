@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: lightblue;
+      height: 75px;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header .menu-user {
+      background-color: lightgreen;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 5px 30px;
+    }
+
+    header .menu-user a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1.4em;
+    }
+
+    header .menu-user a:hover {
+      text-decoration: underline;
+    }
+
+    header .menu-user a+a::before {
+      content: ' / ';
+    }
+
+    .flex-container {
+      background-color: lightpink;
+      display: flex;
+    }
+
+    .flex-container > * {
+
+    }
+
+    .flex-container > aside {
+      width: 300px;
+      background-color: lightyellow;
+    }
+
+    .flex-container > main {
+      flex-grow: 1;
+      padding: 5px;
+      /* box-sizing: border-box; */
+    }
+
+    aside nav li {
+      margin: 10px 0;
+    }
+
+    aside nav li a {
+      text-align: center;
+      font-size: 2em;
+      color: #fff;
+      text-decoration: none;
+      background-color: lightsalmon;
+      width: 100%;
+      display: block;
+      /*
+      transition-property: background-color;
+      transition-duration: 400ms;
+      transition-timing-function: linear;
+      */
+      transition: background-color 400ms linear;
+    }
+
+    aside nav li a:hover {
+      background-color: salmon;
+    }
+
+    .breadcrumb li {
+      display: inline;
+    }
+
+    .breadcrumb li + li::before {
+      content: ' / ';
+    }
+
+    .breadcrumb a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .gallery div {
+      /* display: inline-block; */
+      /* float: left; */
+      width: calc(33.33% - 4px);
+      margin-right: 6px;
+      margin-bottom: 6px;
+      height: 100px;
+      background-color: lightskyblue;
+    }
+
+    .gallery div:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear:left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Titre</h1>
+      <nav class="menu-user">
+        <a href="">Login</a>
+        <a href="">Register</a>
+      </nav>
+    </header>
+    <div class="flex-container">
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <a href="">Item 1</a>
+            </li>
+            <li>
+              <a href="">Item 2</a>
+            </li>
+            <li>
+              <a href="">Item 3</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <nav class="breadcrumb">
+          <ul>
+            <li>
+              <a href="">Home</a>
+            </li>
+            <li>
+              <a href="">Category</a>
+            </li>
+            <li>
+              <a href="">Product</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="gallery">
+          <div>img</div>
+          <div>img</div>
+          <div>img</div>
+          <div>img</div>
+          <div>img</div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
