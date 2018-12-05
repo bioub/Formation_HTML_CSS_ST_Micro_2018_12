@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    [id^=boite] {
+      height: 200px;
+      border: 1px solid black;
+    }
+
+    #boite1 {
+      text-align: center;
+      font-size: 28px;
+      line-height: 200px;
+    }
+
+    #boite2 div {
+      width: 75%;
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #boite3 {
+      display: flex;
+    }
+
+    #boite3 div {
+      width: 75%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="boite1">
+    Texte
+  </div>
+
+  <div id="boite2">
+    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus molestias consequatur minima corporis, iusto consequuntur nisi, architecto commodi nesciunt, facilis temporibus voluptatibus impedit autem harum! Vel fugiat nam amet molestias.</div>
+  </div>
+
+  <div id="boite3">
+      <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus molestias consequatur minima corporis, iusto consequuntur nisi, architecto commodi nesciunt, facilis temporibus voluptatibus impedit autem harum! Vel fugiat nam amet molestias.</div>
+    </div>
+</body>
+</html>
