@@ -12,6 +12,8 @@
   },
   "scripts": {
     "lint": "stylelint **/*.{css,html}",
-    "prettier": "prettier --write '**/*.{css,html}'"
+    "prettier": "prettier --write '**/*.{css,html}'",
+    "build:scss": "node-sass --recursive --output exemple-sass/css exemple-sass/scss",
+    "watch:scss": "npm run build:scss -- --watch"
   }
 }
