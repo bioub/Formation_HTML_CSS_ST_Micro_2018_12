@@ -35,7 +35,7 @@
 
     header .menu-user {
       background-color: lightgreen;
-      position: absolute;
+      position: absolute; /* perds son width: 100%, devient largeur du contenu */
       top: 0;
       right: 0;
       padding: 5px 30px;
@@ -96,8 +96,13 @@
       transition: background-color 400ms linear;
     }
 
+    aside nav li a.current {
+      background-color: red;
+    }
+
     aside nav li a:hover {
       background-color: salmon;
+      transition: background-color 400ms linear;
     }
 
     .breadcrumb li {

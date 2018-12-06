@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "prettier": "1.15.3",
+    "stylelint": "~9.9.0",
+    "stylelint-config-recommended": "^2.1.0"
+  },
+  "scripts": {
+    "lint": "stylelint **/*.{css,html}",
+    "prettier": "prettier --write '**/*.{css,html}'"
+  }
+}
