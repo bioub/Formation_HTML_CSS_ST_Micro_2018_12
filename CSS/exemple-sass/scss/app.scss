@@ -1,27 +1,16 @@
-$container-width: 960px;
-$header-bg-color: lightblue;
-$gallery-cols: 4;
-$gallery-grid-gap: 8px;
+$aside-bg-color: lightgreen;
+$mobile-max-width: 700px;
 
-/*
-Créer une variable pour chaque background-color
-Utiliser les nested rules au maximum
-*/
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+@import 'variables';
+@import 'generic';
 
 .container {
   width: $container-width;
   margin: 0 auto;
+
+  @media (max-width: $mobile-max-width) {
+    width: 100%;
+  }
 }
 
 header {
@@ -33,114 +22,128 @@ header {
   h1 {
     margin: 0;
   }
-}
 
-header .menu-user {
-  background-color: lightgreen;
-  position: absolute; /* perds son width: 100%, devient largeur du contenu */
-  top: 0;
-  right: 0;
-  padding: 5px 30px;
-}
+  .menu-user {
+    background-color: $menu-user-bg-color;
+    position: absolute; /* perds son width: 100%, devient largeur du contenu */
+    top: 0;
+    right: 0;
+    padding: 5px 30px;
 
-header .menu-user a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.4em;
+    a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1.4em;
 
-  /* header .menu-user a:hover */
-  &:hover {
-    text-decoration: underline;
+      /* header .menu-user a:hover */
+      &:hover {
+        text-decoration: underline;
+      }
+
+      + a::before {
+        content: " / ";
+      }
+    }
   }
 }
 
 
-header .menu-user a + a::before {
-  content: " / ";
-}
+
 
 .flex-container {
-  background-color: lightpink;
+  > aside {
+    width: 30%;
+    background-color: $aside-bg-color;
+    float: left;
+
+    @media (max-width: $mobile-max-width) {
+      width: 100%;
+      float: none;
+    }
+
+    nav {
+      li {
+        margin: 10px 0;
+      }
+
+      a {
+        text-align: center;
+        font-size: 2em;
+        color: #fff;
+        text-decoration: none;
+        background-color: $aside-menu-bg-color;
+        width: 100%;
+        display: block;
+        transition: background-color 400ms linear;
+
+        &:hover {
+          background-color: darken($aside-menu-bg-color, 30%);
+          transition: background-color 400ms linear;
+        }
+      }
+    }
+  }
+
+  > main {
+    width: calc(70% - 10px);
+    float: left;
+    padding: 5px;
+
+    @media (max-width: $mobile-max-width) {
+      float: none;
+      width: calc(100% - 10px);
+    }
+  }
 }
 
-.flex-container > * {
+
+.breadcrumb {
+  li {
+    display: inline;
+
+    + li::before {
+      content: " / ";
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-.flex-container > aside {
-  width: 30%;
-  background-color: lightyellow;
-  float: left;
+
+.gallery {
+  div {
+    float: left;
+    width: calc(
+      #{100% / $gallery-cols} - #{(
+          $gallery-grid-gap * ($gallery-cols - 1) / $gallery-cols
+        )}
+    );
+    margin-right: $gallery-grid-gap;
+    margin-bottom: $gallery-grid-gap;
+    height: 100px;
+    background-color: lightskyblue;
+
+    &:nth-child(#{$gallery-cols}n + #{$gallery-cols}) {
+      margin-right: 0;
+    }
+  }
 }
 
-.flex-container > main {
-  width: calc(70% - 10px);
-  float: left;
-  padding: 5px;
-  /* box-sizing: border-box; */
-}
 
-aside nav li {
-  margin: 10px 0;
-}
+@import 'utilities';
 
-aside nav li a {
-  text-align: center;
-  font-size: 2em;
-  color: #fff;
-  text-decoration: none;
-  background-color: lightsalmon;
-  width: 100%;
-  display: block;
-  /*
-transition-property: background-color;
-transition-duration: 400ms;
-transition-timing-function: linear;
+
+/*
+@media (max-width: 700px) {
+  aside, main {
+    float: none !important;
+  }
+}
 */
-  transition: background-color 400ms linear;
-}
-
-aside nav li a.current {
-  background-color: red;
-}
-
-aside nav li a:hover {
-  background-color: salmon;
-  transition: background-color 400ms linear;
-}
-
-.breadcrumb li {
-  display: inline;
-}
-
-.breadcrumb li + li::before {
-  content: " / ";
-}
-
-.breadcrumb a {
-  color: #000;
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-.gallery div {
-  /* display: inline-block; */
-  float: left;
-  width: calc(#{100% / $gallery-cols} - #{($gallery-grid-gap * ($gallery-cols - 1) / $gallery-cols)});
-  margin-right: $gallery-grid-gap;
-  margin-bottom: $gallery-grid-gap;
-  height: 100px;
-  background-color: lightskyblue;
-}
-
-.gallery div:nth-child(#{$gallery-cols}n + #{$gallery-cols}) {
-  margin-right: 0;
-}
-
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: left;
-}

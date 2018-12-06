@@ -1,8 +1,3 @@
-@charset "UTF-8";
-/*
-Créer une variable pour chaque background-color
-Utiliser les nested rules au maximum
-*/
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif; }
@@ -15,6 +10,9 @@ nav ul {
 .container {
   width: 960px;
   margin: 0 auto; }
+  @media (max-width: 700px) {
+    .container {
+      width: 100%; } }
 
 header {
   background-color: lightblue;
@@ -23,91 +21,84 @@ header {
   /* header h1 */ }
   header h1 {
     margin: 0; }
-
-header .menu-user {
-  background-color: lightgreen;
-  position: absolute;
-  /* perds son width: 100%, devient largeur du contenu */
-  top: 0;
-  right: 0;
-  padding: 5px 30px; }
-
-header .menu-user a {
-  color: #000;
-  text-decoration: none;
-  font-size: 1.4em;
-  /* header .menu-user a:hover */ }
-  header .menu-user a:hover {
-    text-decoration: underline; }
-
-header .menu-user a + a::before {
-  content: " / "; }
-
-.flex-container {
-  background-color: lightpink; }
+  header .menu-user {
+    background-color: lightgreen;
+    position: absolute;
+    /* perds son width: 100%, devient largeur du contenu */
+    top: 0;
+    right: 0;
+    padding: 5px 30px; }
+    header .menu-user a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1.4em;
+      /* header .menu-user a:hover */ }
+      header .menu-user a:hover {
+        text-decoration: underline; }
+      header .menu-user a + a::before {
+        content: " / "; }
 
 .flex-container > aside {
   width: 30%;
-  background-color: lightyellow;
+  background-color: lightgreen;
   float: left; }
+  @media (max-width: 700px) {
+    .flex-container > aside {
+      width: 100%;
+      float: none; } }
+  .flex-container > aside nav li {
+    margin: 10px 0; }
+  .flex-container > aside nav a {
+    text-align: center;
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+    background-color: lightsalmon;
+    width: 100%;
+    display: block;
+    transition: background-color 400ms linear; }
+    .flex-container > aside nav a:hover {
+      background-color: #e04000;
+      transition: background-color 400ms linear; }
 
 .flex-container > main {
   width: calc(70% - 10px);
   float: left;
-  padding: 5px;
-  /* box-sizing: border-box; */ }
-
-aside nav li {
-  margin: 10px 0; }
-
-aside nav li a {
-  text-align: center;
-  font-size: 2em;
-  color: #fff;
-  text-decoration: none;
-  background-color: lightsalmon;
-  width: 100%;
-  display: block;
-  /*
-transition-property: background-color;
-transition-duration: 400ms;
-transition-timing-function: linear;
-*/
-  transition: background-color 400ms linear; }
-
-aside nav li a.current {
-  background-color: red; }
-
-aside nav li a:hover {
-  background-color: salmon;
-  transition: background-color 400ms linear; }
+  padding: 5px; }
+  @media (max-width: 700px) {
+    .flex-container > main {
+      float: none;
+      width: calc(100% - 10px); } }
 
 .breadcrumb li {
   display: inline; }
-
-.breadcrumb li + li::before {
-  content: " / "; }
-
-.breadcrumb a {
-  color: #000;
-  text-decoration: none; }
-
-.breadcrumb a:hover {
-  text-decoration: underline; }
+  .breadcrumb li + li::before {
+    content: " / "; }
+  .breadcrumb li a {
+    color: #000;
+    text-decoration: none; }
+    .breadcrumb li a:hover {
+      text-decoration: underline; }
 
 .gallery div {
-  /* display: inline-block; */
   float: left;
-  width: calc(25% - 6px);
+  width: calc( 25% - 6px);
   margin-right: 8px;
   margin-bottom: 8px;
   height: 100px;
   background-color: lightskyblue; }
-
-.gallery div:nth-child(4n + 4) {
-  margin-right: 0; }
+  .gallery div:nth-child(4n + 4) {
+    margin-right: 0; }
 
 .clearfix::after {
   content: "";
   display: block;
   clear: left; }
+
+/*
+@media (max-width: 700px) {
+  aside, main {
+    float: none !important;
+  }
+}
+*/
